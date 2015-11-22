@@ -1,0 +1,11 @@
+*.lo
+*.Plo
+*.Tpo
+*.so
+*.so.*
+*.o
+*.la
+*.lai
+*.a
+*.log
+*.m4
