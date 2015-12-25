@@ -11,9 +11,12 @@
 **Response:**
 * content/type: `application/json`
 * code:
-    * _Success_ - `200`
+    * _Success_ - `201 HTTP_CREATED`
     * _Error_ - `404`
-* body: `{id: "note_id", url: "/notes/(user_id)/(note_id)", order: #order_in_list, creation_date: #timestamp, name: "string", header: "string", body: "string"}`
+    * _Bad Request_ - `400`
+* header:
+    * _Locatin_ - `/notes/(user_id)/(note_id)`
+* body: `{id: "note_id"}`
 
 ### Edit Note
 ***
@@ -27,7 +30,8 @@
 * content/type: `application/json`
 * code:
     * _Success_- `200`
-    * _Error_- `404`
+    * _Error_- `404`   
+    * _Bad Request_ - `400`
 * body: `empty`
 
 ### Delete Note
@@ -50,7 +54,7 @@
 **Request:** 
 * url: `/notes/(user_id)`
 * method: `get`
-* params: `order=acs|dcs, from=unsign_int, to=unsign_int`
+* params: `sort_field=field_name, order=acs|dcs, from=unsign_int, to=unsign_int`
 
 **Response:**
 * content/type: `application/json`
